@@ -1,0 +1,52 @@
+## this file is compiled once and then it already never can be changed
+<Button>
+    background_normal:''
+    background_color:  '#A9C673'
+<MyWidget>
+    info: inf1
+    label: lab1
+    button1: but1
+    button2: but2
+    image: im1
+    GridLayout:
+        size: root.width, root.height
+        rows: 3
+        cols: 1
+        Label:
+            id: lab1
+            font_size: 50
+            font_name: 'пробный шрифт'
+            color: "#A9C673"
+
+        TextInput:
+            id: inf1
+            size_hint: 1, 0.2
+            multiline: False
+            background_normal: 'gradient.png'
+            selection_color: (0.5,0.5,0.7,1)
+            foreground_color: '#A9C673'
+            font_size:50
+            background_active: 'gradient.jpg'
+            background_disabled_normal: 'dark-gradient.png'
+            cursor_blink: 0
+            write_tab: True
+            readonly: 0
+            base_direction: 'rtl'       ##('ltr', 'rtl', 'weak_rtl', 'weak_ltr', None)
+        BoxLayout:
+            spacing: 20
+            padding: 20
+            horizontal: "vertical"
+            Button:
+                id: but1
+                on_press: root.sending()
+            Image:
+                id: im1
+                keep_ratio: False
+                allow_stretch: True
+                border: 5,5,5,5
+                opacity: 1                 ## image brightness
+                size_hint: 1 , 1           ## scale of the widget
+            Button:
+                id: but2
+                on_press: root.clear()
+
